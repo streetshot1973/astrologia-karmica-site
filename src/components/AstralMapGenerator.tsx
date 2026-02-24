@@ -114,7 +114,7 @@ export default function AstralMapGenerator() {
             }
 
             setStatus('success');
-            setReading(result);
+            setReading("— " + result);
 
             // Scroll to the result slightly after it appears
             setTimeout(() => {

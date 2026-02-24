@@ -248,7 +248,7 @@ export default function AstralMapGenerator() {
 
                                 <div className="relative border-l-2 border-yellow-500/50 pl-6 md:pl-10 py-4 max-w-3xl mx-auto">
                                     <Sparkles className="absolute -left-3 -top-3 w-6 h-6 text-yellow-400" />
-                                    <p className="font-serif text-xl md:text-2xl leading-relaxed text-yellow-50/90 whitespace-pre-wrap">
+                                    <p translate="no" className="font-serif text-xl md:text-2xl leading-relaxed text-yellow-50/90 whitespace-pre-wrap">
                                         {displayedText}
                                         {isTyping && <span className="inline-block w-2 h-6 bg-yellow-400 ml-1 animate-pulse" />}
                                     </p>

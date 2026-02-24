@@ -19,12 +19,11 @@ function useTypewriter(text: string, speed: number = 30) {
 
         setIsTyping(true);
         let i = 0;
-        setDisplayedText('');
 
         const timer = setInterval(() => {
-            if (i < text.length) {
-                setDisplayedText((prev) => prev + text.charAt(i));
-                i++;
+            i++;
+            if (i <= text.length) {
+                setDisplayedText(text.substring(0, i));
             } else {
                 setIsTyping(false);
                 clearInterval(timer);

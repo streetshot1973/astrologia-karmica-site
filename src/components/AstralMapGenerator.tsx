@@ -57,7 +57,7 @@ export default function AstralMapGenerator() {
     const [day, setDay] = useState('');
     const [month, setMonth] = useState('');
     const [year, setYear] = useState('');
-    const [time, setTime] = useState('');
+
     const [city, setCity] = useState('');
 
     const [reading, setReading] = useState<string | null>(null);
@@ -73,7 +73,7 @@ export default function AstralMapGenerator() {
         e.preventDefault();
         const birthYear = parseInt(year, 10);
 
-        if (!name || !day || !month || !year || !time || !city) {
+        if (!name || !day || !month || !year || !city) {
             setError("Por favor, preencha todos os campos para um cálculo preciso.");
             setStatus('error');
             return;
@@ -163,19 +163,8 @@ export default function AstralMapGenerator() {
                         <input type="number" placeholder="Mês (MM)" value={month} onChange={(e) => setMonth(e.target.value)} className="w-full bg-black/80 border border-yellow-500/30 rounded-xl px-6 py-4 text-xl text-center text-yellow-100 placeholder-stone-600 focus:outline-none focus:border-yellow-500/60 shadow-inner transition-colors" />
                         <input type="number" placeholder="Ano (AAAA)" value={year} onChange={(e) => setYear(e.target.value)} className="w-full bg-black/80 border border-yellow-500/30 rounded-xl px-6 py-4 text-xl text-center text-yellow-100 placeholder-stone-600 focus:outline-none focus:border-yellow-500/60 shadow-inner transition-colors" />
 
-                        {/* Time and City */}
-                        <div className="md:col-span-1 relative">
-                            <input
-                                type={time ? "time" : "text"}
-                                placeholder="Hora (Ex: 14:30)"
-                                value={time}
-                                onFocus={(e) => e.target.type = 'time'}
-                                onBlur={(e) => { if (!time) e.target.type = 'text' }}
-                                onChange={(e) => setTime(e.target.value)}
-                                className="w-full bg-black/80 border border-yellow-500/30 rounded-xl px-6 py-4 text-xl text-center text-yellow-100 placeholder-stone-600 focus:outline-none focus:border-yellow-500/60 shadow-inner transition-colors"
-                            />
-                        </div>
-                        <div className="md:col-span-2">
+                        {/* City */}
+                        <div className="md:col-span-3">
                             <input type="text" placeholder="Cidade de Nascimento (Ex: São Paulo, SP)" value={city} onChange={(e) => setCity(e.target.value)} className="w-full bg-black/80 border border-yellow-500/30 rounded-xl px-6 py-4 text-xl text-yellow-100 placeholder-stone-600 focus:outline-none focus:border-yellow-500/60 shadow-inner transition-colors" />
                         </div>
 
